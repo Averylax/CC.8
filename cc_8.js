@@ -31,3 +31,19 @@ const calculateServiceFee = (serviceType, amount) => { // Calculate the service 
 console.log(calculateServiceFee("Premium", 200)); // Expected output: The service fee is $30.00
 console.log(calculateServiceFee("Standard", 500)); // Expected output: The service fee is $50.00
 // Task 3 End
+
+// Task 4 - Car rental cost calculation
+const calculateCarRentalCost = (days, carType, insurance = false) => { // Calculate the total cost of car rental based on the number of days, car type, and insurance using an arrow statement
+   const rates = { // Object to store the rental rates based on the car type
+         "Economy": 50, // Economy car rental rate is $50 per day
+         "Standard": 60,  // Standard car rental rate is $60 per day
+         "Luxury": 100, // Luxury car rental rate is $100 per day
+   };
+   const baseCost = rates[carType] * days; // Calculate the base cost of the car rental
+   const insuranceCost = insurance ? days * 20 : 0; // Calculate the insurance cost based on the number of days
+   const totalCost = baseCost + insuranceCost; // Calculate the total cost of the car rental
+   return `The total cost is $${totalCost.toFixed(2)}`; // Calculate the salary after adding the bonus and deducting tax on base salary
+};
+console.log(calculateCarRentalCost(3, "Economy", true)); // Expected output: The total cost is $210.00
+console.log(calculateCarRentalCost(5, "Luxury", false)); // Expected output: The total cost is $500.00
+// Task 4 - End
