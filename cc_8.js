@@ -81,3 +81,14 @@ let cart = createCartTracker(); // Create a shopping cart tracker
 console.log(cart(20)); // Expected output: Total Cart Value $20.00
 console.log(cart(35)); // Expected output: Total Cart Value $55.00
 // Task 7 - End
+
+// Task 8 - Savings Growth Projection
+const calculateSavings = (years, amount) => { // Calculate the projected savings after a certain number of years
+    if (years >= 10) { // Base case: return the projected savings after 10 years
+        return `Projected Savings $${amount.toFixed(2)}`; // Return the projected savings with 2 decimal points
+    }
+    return calculateSavings(years + 1, amount * 1.05); // Recursive case: calculate the savings for the next year with a 5% interest rate
+};
+console.log(calculateSavings(8, 1000)); // Expected output: Projected Savings $1473.94
+console.log(calculateSavings(5, 5000)); // Expected output: Projected Savings $6910.25
+// Task 8 - End
