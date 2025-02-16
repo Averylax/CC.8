@@ -47,3 +47,13 @@ const calculateCarRentalCost = (days, carType, insurance = false) => { // Calcul
 console.log(calculateCarRentalCost(3, "Economy", true)); // Expected output: The total cost is $210.00
 console.log(calculateCarRentalCost(5, "Luxury", false)); // Expected output: The total cost is $500.00
 // Task 4 - End
+
+// Task 5 - Loan Payment Calculation
+function calculateLoanPayment(principal, rate, time) { // Calculate the total amount to be paid on a loan
+    const interest = principal * rate * time; // Calculate the interest on the loan
+    const totalAmount = principal + interest; // Calculate the total amount to be paid
+    return `The total amount to be paid is $${totalAmount.toFixed(2)}`; // Return the total amount to be paid with 2 decimal points
+}
+console.log(calculateLoanPayment(1000, 0.05, 2)); // Expected output: The total amount to be paid is $1100.00
+console.log(calculateLoanPayment(5000, 0.07, 3)); // Expected output: The total amount to be paid is $5350.00
+// Task 5 - End
