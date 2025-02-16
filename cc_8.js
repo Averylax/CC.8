@@ -67,3 +67,17 @@ const largeTransactions = filterLargeTransactions(transactions, amount => amount
 console.log(transactions); // Expected output: [200, 1500, 3200, 800, 2500]
 console.log(largeTransactions); // Expected output: [1500, 3200, 2500]
 // Task 6 - End
+
+// Task 7 - Shopping Cart Tracker
+const createCartTracker = () => { // Create a shopping cart tracker using a closure
+    let total = 0; // Initialize the total cart value
+
+    return (amount) => { // Return a function that updates the total cart value
+        total += amount; // Add the amount to the total cart value
+        return `Total Cart Value $${total.toFixed(2)}`; // Return the total cart value with 2 decimal points
+    };
+};
+let cart = createCartTracker(); // Create a shopping cart tracker
+console.log(cart(20)); // Expected output: Total Cart Value $20.00
+console.log(cart(35)); // Expected output: Total Cart Value $55.00
+// Task 7 - End
